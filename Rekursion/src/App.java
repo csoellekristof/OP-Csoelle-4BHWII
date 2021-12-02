@@ -7,7 +7,7 @@ public class App {
 
         final long timeStart = System.nanoTime();
 		
-		System.out.println(sum(1000));
+		System.out.println(sum(10000));
 		 	  
 	    final long timeEnd = System.nanoTime();
 	    System.out.println("Verlaufszeit der Schleife: " + (timeEnd - timeStart)/1000 + " Mikrosek.");
@@ -16,7 +16,7 @@ public class App {
 
         final long timeStart2 = System.nanoTime();
 		
-		System.out.println(summenFunktion(1000));
+		System.out.println(summenFunktion(10000));
 		 	  
 	    final long timeEnd2 = System.nanoTime();
 	    System.out.println("Verlaufszeit der Schleife: " + (timeEnd2 - timeStart2)/1000 + " Mikrosek.");
@@ -26,7 +26,7 @@ public class App {
 
         final long timeStart3 = System.nanoTime();
 		
-		System.out.println(summeIterativ(1000));
+		System.out.println(summeIterativ(10000));
 		 	  
 	    final long timeEnd3 = System.nanoTime();
 	    System.out.println("Verlaufszeit der Schleife: " + (timeEnd3 - timeStart3)/1000 + " Mikrosek.");
@@ -36,16 +36,16 @@ public class App {
 
     }
 
-    public static long summeEndRek(long m, long n) {
-        if (n == 0) {
-          return m;
+    public static long summeEndRek(long zahl, long result) {
+        if (result == 0) {
+          return zahl;
         }
         else {
-          return summeEndRek (m+n, n-1);
+          return summeEndRek (zahl+result, result-1);
         }
       }
- public static long sum(long n) {
-     return summeEndRek(0, n);
+ public static long sum(long result) {
+     return summeEndRek(0, result);
  }
 
 
